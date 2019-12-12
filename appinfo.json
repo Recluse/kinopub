@@ -1,0 +1,10 @@
+{
+    "vendor": "Dmitry Shibko",
+    "largeIcon": "largeIcon.png",
+    "icon": "icon.png",
+    "main": "index.html",
+    "id": "com.dsgames.kinopub",
+    "title": "kinopub",
+    "type": "web",
+    "version": "0.0.1"
+}
