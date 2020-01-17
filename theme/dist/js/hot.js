@@ -21,15 +21,10 @@ function get_access_token(code, user_code, interval, notify) {
                 home()
 
                 if (notify) {
-                	info.info = {
-                		      title: 'KinoPub WebOS',
-                		      hardware: 'Emulator',
-                		      software: 'kinopub.recluse.ru'
-                		    };
                     $.ajax({
                         method: "POST",
                         beforeSend: function (xhr) {
-                            xhr.setRequestHeader('Authorization', 'Bearer ' + data.access_token + info.info);
+                            xhr.setRequestHeader('Authorization', 'Bearer ' + data.access_token);
                         },
                         url: endpoint + "/v1/device/notify",
                         success: function (data) {
@@ -85,66 +80,13 @@ $(document).ready(function () {
                 })
             }
         } else {
-            home()
+            hot()
 
             console.log(window.location.href)
         }
     }
 })
 
-function home() {
-    $.ajax({
-        method: "GET",
-        url: "https://api.service-kp.com/v1/items/fresh?type=movie",
-        beforeSend: function (xhr, settings) {
-            xhr.setRequestHeader("Authorization", "Bearer " + localStorage.access_token);
-        },
-        success: function (data) {
-            $.each(data.items, function (k, v) {
-                if  (k < 18) {
-                    var item = $('.content-item-tpl').clone()
-                    item.removeClass('d-none')
-                    item.removeClass('content-item-tpl')
-                    item.find('.img').attr('src', v.posters.medium)
-                    item.find('.title').html(v.title)
-                    item.find('.info').html(v.year + ' ' + $.map(v.genres, function (obj) {
-                        return obj.title
-                    }).join(', '))
-                    item.find('.thumbs-rate').html(v.rating_percentage)
-                    item.find('.imbd-rate').html(v.imdb_rating)
-                    item.find('.kp-rate').html(v.kinopoisk_rating)
-                    item.find('a.arrow-nav').attr('tabindex', Math.floor(k / 6))
-                    item.find('a.arrow-nav').attr('tabcolumn', k - Math.floor(k / 6) * 6)
-
-                    $('.content-item-tpl').before(item)
-                }
-            })
-            console.log(data)
-        },
-        error: function (data) {
-        }
-    })
-}
-
-function info_get() {
-    $.ajax({
-      method: "GET",
-      url: "https://api.service-kp.com/v1/device/info",
-      beforeSend: function (xhr, settings) {
-        xhr.setRequestHeader("Authorization", "Bearer " + localStorage.access_token);
-        },
-        success: function (response) {
-        	console.log(response);
-        	return response;
-        }, 
-        error: function (response) {
-        	console.log(response);
-        	return response;
-        }
-      })
-  }
-
-object.addEventListener("keydown", 
 function hot() {
     $.ajax({
         method: "GET",
@@ -178,4 +120,3 @@ function hot() {
         }
     })
 }
-);

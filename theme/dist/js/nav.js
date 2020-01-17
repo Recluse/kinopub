@@ -88,18 +88,47 @@ function goLeft() {
   }
 }
 
-document.addEventListener("keydown", function(inEvent){
-  if(window.event) {
-    keycode = inEvent.keyCode;
-  } else if(e.which) {
-    keycode = inEvent.which;
-  }
-  console.log(keycode)
+function doOk() {
+//todo
+}
 
-  switch(keycode) {
-    case 37: goLeft(); break;
-    case 38: goUp(); break;
-    case 39: goRight(); break;
-    case 40: goDown(); break;
-  }
+document.addEventListener("keydown", function(inEvent){
+	  var keycode;	  
+	  if(window.event) { 
+	      keycode = inEvent.keyCode;
+	  } else if(e.which) { 
+	      keycode = inEvent.which;
+    } 
+	  switch(keycode) {
+	      //case 13: doOk(); break;
+	      case 37: goLeft(); break;
+	      case 38: goUp(); break;
+	      case 39: goRight(); break;
+	      case 40: goDown(); break; 
+	  }
 });
+
+
+// History
+document.addEventListener('click', function (event) {
+  var title;
+   
+  clearPoppedData();
+  event.preventDefault();
+   
+  if (event.target.nodeName == 'A') {
+      stackElement = event.target.innerHTML;
+      history.pushState(stackElement, '', event.target.href);
+      pushData(stackElement);
+  }
+}, false);
+
+window.addEventListener('popstate', function (event) {
+  var data = event.state;
+  if (data) {
+      popData(data);
+  } else {
+      initResult();
+  }
+       
+}, false);

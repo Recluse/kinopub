@@ -1,10 +1,10 @@
 {
-    "vendor": "Dmitry Shibko",
+    "vendor": "FlyDev",
     "largeIcon": "largeIcon.png",
     "icon": "icon.png",
     "main": "index.html",
-    "id": "com.dsgames.kinopub",
-    "title": "kinopub",
+    "id": "ru.recluse.kinopub",
+    "title": "KinoPub",
     "type": "web",
     "version": "0.0.1"
 }

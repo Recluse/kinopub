@@ -1,23 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Base: fork from https://github.com/dshibko/kinopub -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <script src="webOSTVjs-1.1.1/webOSTV.js" charset="utf-8"></script>
-  <script src="webOSTVjs-1.1.1/webOSTV-dev.js" charset="utf-8"></script>
-  <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
-  <script src="theme/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="theme/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="theme/dist/js/adminlte.js"></script>
-  <script src="theme/dist/js/main.js"></script>
-  <script src="theme/dist/js/nav.js"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="theme/plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
@@ -44,18 +30,19 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
+
       <!-- Sidebar Menu -->
       <nav class="mt-2 sidenav">
         <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu"
             data-accordion="false">
           <li class="nav-item">
-            <a tabcolumn="0" tabindex="0" href="#" id="Home" class="nav-link arrow-nav active">
+            <a tabcolumn="0" tabindex="0" href="index.html" class="nav-link arrow-nav">
               <i class="fas fa-home nav-icon"></i>
               <p>Новинки</p>
             </a>
           </li>
           <li class="nav-item">
-            <a tabcolumn="0" tabindex="1" onclick="hot()" href="hot.html" id="Hot" class="nav-link arrow-nav"> <!-- dont do this! todo -->
+            <a tabcolumn="0" tabindex="1" href="hot.html" class="nav-link arrow-nav active">
               <i class="fas fa-fire nav-icon"></i>
               <p>Горячие</p>
             </a>
@@ -138,7 +125,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Новинки | Фильмы</h1>
+            <h1 class="m-0 text-dark">Горячие | Фильмы</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -159,9 +146,9 @@
                   <span class="title info-box-number"></span>
                   <span class="info info-box-text"></span>
                   <span class="stat info-box-text">
-                      <i class="fa fa-thumbs-up"></i> <span class="thumbs-rate"></span>
-                      <i class="fab fa-imdb"></i> <span class="imbd-rate"></span>
-                      <img src="theme/images/kinopoisk.png" class="kp-image img-responsive kinopoisk"> <span class="kp-rate"></span>
+                      <i class="fa fa-thumbs-up"></i> <span class="thumbs-rate">119</span>
+                      <i class="fab fa-imdb"></i> <span class="imbd-rate">7</span>
+                      <img src="theme/images/kinopoisk.png" class="kp-image img-responsive kinopoisk"> <span class="kp-rate">7,2</span>
                   </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -185,25 +172,23 @@
   <!-- /.control-sidebar -->
 </div>
 <button type="button" class="btn btn-default d-none device-overlay" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#modal-default"></button>
-<div class="modal fade" id="modal-default" style="display: none;" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content align-content-center align-items-center">
-      <div class="modal-header">
-        <h4 class="modal-title device-modal-title">Код устройства</h4>
-      </div>
-      <div class="modal-body device-modal-body">
-        <h1></h1>
-      </div>
-      <button type="button" class="close device-modal-close d-none" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">×</span>
-      </button>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
 <!-- ./wrapper -->
 
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="theme/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="theme/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="theme/dist/js/adminlte.js"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="theme/dist/js/demo.js"></script>
+
+<script src="theme/dist/js/main.js"></script>
+<script src="theme/dist/js/nav.js"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
